@@ -1,0 +1,206 @@
+@import "./colors";
+
+/* global font style */
+@font-face {
+  font-family: 'operatorMonoBoldItalic';
+  src: url("./fonts/operatorMono/OperatorMono-BoldItalic.woff") format("woff");
+}
+
+$font-main: 'operatorMonoBoldItalic', sans-serif;
+$btn-width: 60px;
+$gutter: 20px;
+
+/* default styling - remove margin and padding from elements */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: $font-main;
+  vertical-align: baseline;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Box sizing rules */
+* {
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration: underline;
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+  cursor: pointer;
+}
+
+/* Turn off the recent search in WebKit. */
+::-webkit-search-decoration {
+  display: none;
+}
+
+/* Normalise form field line-height in WebKit */
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder,
+select::-webkit-input-placeholder {
+  line-height: normal;
+}
+
+/* Make a search box appear like a text box */
+input[type='search'] {
+  -webkit-appearance: textfield;
+}
+
+/* Make images responsive */
+img {
+  max-width: 100%;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-text-size-adjust: none;
+  -webkit-user-select: none;
+  background: linear-gradient(135deg, #121721 0%, #000000 100%) fixed;
+  color: $martian-lightgray;
+  overflow: hidden;
+}
+
+label {
+  background: $secondary-color;
+  color: $op-dark-misc;
+  font-size: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: $btn-width;
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+.input {
+  width: 100%;
+  $height: 40px;
+  color: $op-secondary;
+  font: inherit;
+  line-height: $height;
+  height: $height;
+  padding: 0 $gutter;
+  resize: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.login {
+  display: flex;
+  border: #3D3D3D 2px solid;
+  width: 100%;
+  height: 100vh;
+
+  &_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    &_title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: $martian-lightgray;
+      margin-bottom: 1rem;
+    }
+
+    &_inputs {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.posts {
+  padding: 5px;
+  max-width: 960px;
+  width: 95%;
+  margin: 20px auto;
+
+  &_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    &_post {
+      display: flex;
+      border: #3D3D3D 4px solid;
+      width: 100%;
+      height: fit-content;
+      justify-content: space-around;
+
+      &:hover {
+        background: $martian-lightgray;
+        color: $martian-dark;
+      }
+    }
+  }
+}
+
+.post {
+  display: flex;
+  border: #3D3D3D 2px solid;
+  width: 100%;
+  height: 100vh;
+
+  &_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.auto-grid {
+  --auto-grid-min-size: 16rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+  grid-gap: 1rem;
+}
+
+li {
+  padding: 5rem 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+  background: #eb4d4b;
+  color: #ffffff;
+}

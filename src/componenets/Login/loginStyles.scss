@@ -1,0 +1,94 @@
+
+.loginContainer {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  padding: 0 4px;
+  place-items: center;
+  font-family: sans-serif;
+  background: linear-gradient(135deg, #121721 0%, #000000 100%) fixed;
+}
+
+#wrapper {
+  height: 20rem;
+  width: 100%;
+  min-width: 18rem;
+  max-width: 25rem;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #d59bf6;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.buttons-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.buttons {
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn-login {
+  padding: 6px 1rem;
+  margin: 1rem 2px 0 2px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.inputs-wrapper {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+
+  .loginInputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 85%;
+  }
+}
+
+.loginInputs {
+  input {
+    height: 2rem;
+    border-radius: 6px;
+    padding: 0.8rem;
+    border: 1px solid grey;
+  }
+
+  .btn--login {
+    padding: 8px;
+    background: #d59bf6;
+    border: 2px solid #d59bf6;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  .btn-create-new-account {
+    padding: 8px;
+    background: #d59bf6;
+    border: 2px solid #d59bf6;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  h1 {
+    text-align: center;
+  }
+}

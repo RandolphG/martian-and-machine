@@ -1,14 +1,9 @@
-import React, { createContext, useEffect, useReducer } from "react";
-import { getPosts } from "./api";
+import { createContext, useEffect, useReducer } from "react";
+import { getPosts } from "../services";
 
 const initialState: any = {
   posts: [],
   message: `Hello from`,
-  loginInfo: {
-    name: "",
-    email: "",
-    password: "",
-  },
 };
 
 export const Store = createContext(initialState);
@@ -30,7 +25,6 @@ const reducer = (state: any, action: any) => {
         ...state,
         message: action.payload,
       };
-
     default:
       return state;
   }
